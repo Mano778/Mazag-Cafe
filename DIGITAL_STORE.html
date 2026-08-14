@@ -1,0 +1,3497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DIGITALSTORE</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Tahoma,sans-serif;
+}
+
+body{
+    background:
+        radial-gradient(circle at 10% 10%,rgba(37,99,235,.06),transparent 25%),
+        radial-gradient(circle at 90% 30%,rgba(99,102,241,.06),transparent 25%),
+        #f8fafc;
+    color:#111;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top{
+    position:relative;
+    overflow:hidden;
+    padding:45px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+        radial-gradient(circle at 20% 30%,rgba(59,130,246,.35),transparent 25%),
+        radial-gradient(circle at 80% 70%,rgba(99,102,241,.25),transparent 25%),
+        linear-gradient(135deg,#020617,#0f172a,#172554);
+
+    box-shadow:0 10px 35px rgba(15,23,42,.20);
+}
+
+.top::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(59,130,246,.10);
+    top:-100px;
+    left:-50px;
+}
+
+.top::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(99,102,241,.08);
+    bottom:-150px;
+    right:-60px;
+}
+
+.top h1{
+    position:relative;
+    z-index:2;
+    font-size:42px;
+    letter-spacing:2px;
+    text-shadow:0 0 25px rgba(96,165,250,.45);
+}
+
+.top p{
+    position:relative;
+    z-index:2;
+    font-size:18px;
+    color:#cbd5e1;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.menu{
+    position:sticky;
+    top:10px;
+    z-index:1000;
+
+    width:calc(100% - 24px);
+    max-width:1100px;
+
+    margin:12px auto;
+    padding:10px;
+
+    border-radius:24px;
+
+    background:rgba(15,23,42,.92);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 40px rgba(15,23,42,.20),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.menu a{
+    color:#cbd5e1;
+    background:transparent;
+    border:1px solid transparent;
+    border-radius:16px;
+    padding:12px 18px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:.25s ease;
+}
+
+.menu a:hover{
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    border-color:rgba(255,255,255,.15);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,.30);
+}
+
+.menu a:active{
+    transform:scale(.94);
+}
+
+#cart,
+#payment-section,
+#contact,
+#products{
+    scroll-margin-top:100px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    margin:25px 15px;
+
+    padding:45px 20px;
+
+    border-radius:25px;
+
+    text-align:center;
+    color:white;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.20),transparent 20%),
+        radial-gradient(circle at 85% 80%,rgba(255,255,255,.15),transparent 25%),
+        linear-gradient(135deg,#2563eb,#312e81,#1e40af);
+
+    box-shadow:0 25px 60px rgba(37,99,235,.25);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+    top:-130px;
+    left:-80px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+    bottom:-180px;
+    right:-100px;
+}
+
+.hero h2{
+    position:relative;
+    z-index:2;
+    font-size:30px;
+    margin-bottom:15px;
+    text-shadow:0 5px 25px rgba(0,0,0,.20);
+}
+
+.hero p{
+    position:relative;
+    z-index:2;
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* =========================
+   HERO BADGE
+========================= */
+
+.hero-badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    margin-bottom:15px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    position:relative;
+    z-index:5;
+}
+
+/* =========================
+   HERO MINI
+========================= */
+
+.hero-mini{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+    position:relative;
+    z-index:5;
+}
+
+.hero-mini span{
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(15,23,42,.10);
+
+    color:#0f172a;
+
+    font-size:14px;
+    font-weight:800;
+
+    box-shadow:
+        0 6px 20px rgba(15,23,42,.12);
+}
+
+/* =========================
+   HERO STATS
+========================= */
+
+.hero-stats{
+    position:relative;
+    z-index:5;
+
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+
+    gap:12px;
+
+    margin:10px auto 20px;
+
+    max-width:650px;
+}
+
+.hero-stat{
+    flex:1;
+
+    min-width:150px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    padding:15px 12px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.90);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    color:#0f172a;
+
+    box-shadow:
+        0 10px 25px rgba(15,23,42,.12);
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s ease;
+}
+
+.hero-stat strong{
+    font-size:24px;
+}
+
+.hero-stat span{
+    color:#0f172a;
+    font-size:14px;
+    font-weight:800;
+}
+
+.hero-stat:hover{
+    transform:translateY(-6px) scale(1.03);
+}
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-btn{
+    position:relative;
+    z-index:5;
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:white;
+    color:#2563eb;
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+    font-size:17px;
+
+    transition:.25s ease;
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.title{
+    text-align:center;
+
+    margin-top:25px;
+    margin-bottom:15px;
+
+    font-size:32px;
+    font-weight:800;
+
+    color:#0f172a;
+}
+
+.title::before{
+    content:"✦";
+    display:block;
+    color:#2563eb;
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.title::after{
+    content:"";
+    width:90px;
+    height:5px;
+
+    display:block;
+
+    margin:12px auto 0;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+
+    box-shadow:0 4px 15px rgba(37,99,235,.30);
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+    display:inline-block;
+
+    background:#2563eb;
+    color:white;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 5px 15px rgba(37,99,235,.25);
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    display:block;
+
+    width:80%;
+    max-width:500px;
+
+    margin:12px auto 15px;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    outline:none;
+
+    box-shadow:0 5px 15px #ddd;
+}
+
+.search-box:focus{
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.10);
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin:10px 20px 15px;
+
+    flex-wrap:wrap;
+}
+
+.categories button{
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.categories button:hover{
+    background:#1e40af;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:20px;
+
+    padding:20px 20px 45px;
+
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.card{
+    position:relative;
+
+    border:1px solid rgba(226,232,240,.9);
+
+    background:rgba(255,255,255,.96);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.07),
+        0 2px 6px rgba(15,23,42,.04);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:cardAppear .6s ease both;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #06b6d4
+        );
+
+    z-index:5;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(37,99,235,.15),
+        0 5px 15px rgba(15,23,42,.08);
+}
+
+.product-image{
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .4s ease;
+}
+
+.card:hover .product-image{
+    transform:scale(1.06);
+}
+
+.card h3{
+    font-size:23px;
+    margin-top:15px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.7;
+    margin:8px 15px;
+}
+
+.price{
+    display:inline-block;
+
+    color:#2563eb;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #eef2ff
+        );
+
+    padding:7px 14px;
+
+    border-radius:14px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin:15px;
+}
+
+.rating{
+    margin:10px 0;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    color:#f59e0b;
+}
+
+.rating span{
+    color:#64748b;
+
+    font-size:13px;
+
+    letter-spacing:0;
+}
+
+/* =========================
+   PRODUCT MINI INFO
+========================= */
+
+.product-info-mini{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin:5px auto 16px;
+
+    padding:8px;
+
+    max-width:240px;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+}
+
+.product-info-mini span{
+    padding:5px 8px;
+
+    border-radius:9px;
+
+    background:white;
+
+    color:#334155;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 2px 6px rgba(15,23,42,.06);
+}
+
+/* =========================
+   POPULAR BADGE
+========================= */
+
+.popular-badge{
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    z-index:20;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f97316,
+            #ef4444
+        );
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 8px 20px rgba(239,68,68,.30);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    box-sizing:border-box;
+    font-family:inherit;
+}
+
+.card button,
+.details button,
+.cart button,
+.order-form button{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:none;
+
+    padding:13px 30px;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+.card button:hover,
+.details button:hover,
+.cart button:hover,
+.order-form button:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.08);
+
+    box-shadow:
+        0 15px 35px rgba(37,99,235,.35);
+}
+
+.card button:active,
+.details button:active,
+.cart button:active,
+.order-form button:active{
+    transform:scale(.95);
+}
+
+button:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+    transform:none !important;
+}
+
+/* =========================
+   SHOW PRODUCT BUTTON
+========================= */
+
+button[onclick^="showProduct"]{
+
+    display:block !important;
+
+    width:fit-content !important;
+
+    min-width:120px !important;
+
+    margin:10px auto !important;
+
+    padding:9px 20px !important;
+
+    background:#2563eb !important;
+
+    color:#ffffff !important;
+
+    border:none !important;
+
+    border-radius:999px !important;
+
+    font-size:14px !important;
+
+    font-weight:700 !important;
+
+    cursor:pointer !important;
+
+    box-shadow:
+        0 4px 10px rgba(37,99,235,.20) !important;
+}
+
+button[onclick^="showProduct"]:hover{
+
+    transform:translateY(-2px) !important;
+
+    box-shadow:
+        0 6px 14px rgba(37,99,235,.30) !important;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+    display:none;
+
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(248,250,252,.94)
+        );
+
+    border:1px solid #dbeafe;
+
+    border-top:3px solid #2563eb;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.10);
+}
+
+.details h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.details .product-image{
+    max-width:500px;
+    margin:0 auto 20px;
+    border-radius:18px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart{
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:1100px;
+
+    margin:45px auto;
+
+    padding:35px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(248,250,252,.94)
+        );
+
+    border:1px solid #dbeafe;
+
+    border-top:3px solid #2563eb;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.10);
+
+    text-align:center;
+}
+
+.cart h2{
+    font-size:30px;
+    margin-bottom:18px;
+    color:#0f172a;
+}
+
+.cart p{
+    font-size:20px;
+    margin:10px;
+}
+
+.cart-status{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    max-width:500px;
+
+    margin:15px auto 25px;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #eef2ff
+        );
+
+    border:1px solid #dbeafe;
+
+    text-align:right;
+}
+
+.cart-status-icon{
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color:white;
+
+    font-size:23px;
+
+    box-shadow:
+        0 8px 18px rgba(37,99,235,.25);
+}
+
+.cart-status strong{
+    display:block;
+
+    color:#0f172a;
+
+    font-size:16px;
+}
+
+.cart-status span{
+    display:block;
+
+    margin-top:3px;
+
+    color:#64748b;
+
+    font-size:13px;
+}
+
+#cartItems{
+    max-width:600px;
+
+    margin:20px auto;
+}
+
+#cartItems p{
+    padding:12px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    font-size:16px;
+}
+
+.cart-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+}
+
+/* =========================
+   CLEAR BUTTON
+========================= */
+
+.clear-btn{
+    background:#dc2626 !important;
+
+    box-shadow:
+        0 8px 20px rgba(220,38,38,.25) !important;
+}
+
+.clear-btn:hover{
+    background:#b91c1c !important;
+}
+
+/* =========================
+   ORDER FORM
+========================= */
+
+.order-form{
+    display:none;
+
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(248,250,252,.94)
+        );
+
+    border:1px solid #dbeafe;
+
+    border-top:3px solid #06b6d4;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.10);
+
+    text-align:center;
+}
+
+.order-form h2{
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.order-form label{
+    display:block;
+
+    width:90%;
+
+    margin:14px auto 5px;
+
+    text-align:right;
+
+    color:#334155;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+
+    display:block;
+
+    width:90%;
+
+    margin:10px auto;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    background:white;
+
+    outline:none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .2s ease;
+}
+
+.order-form input:hover,
+.order-form select:hover,
+.order-form textarea:hover{
+    border-color:#93c5fd;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.10);
+
+    transform:translateY(-1px);
+}
+
+.order-form textarea{
+    height:100px;
+    resize:none;
+}
+
+.order-form button{
+    margin-top:15px;
+}
+
+/* =========================
+   PAYMENT / CONTACT
+========================= */
+
+.contact{
+
+    position:relative;
+
+    overflow:hidden;
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(248,250,252,.94)
+        );
+
+    border:1px solid #e2e8f0;
+
+    border-top:3px solid #7c3aed;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.09);
+
+    text-align:center;
+}
+
+.contact h2{
+    font-size:28px;
+    margin:20px;
+}
+
+.payment-box,
+.contact-box{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eef6ff
+        );
+
+    border:1px solid #dbeafe;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin:15px;
+
+    box-shadow:
+        0 8px 25px rgba(37,99,235,.07);
+
+    transition:.25s ease;
+}
+
+.payment-box:hover,
+.contact-box:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(37,99,235,.12);
+}
+
+.payment-box p,
+.contact-box p{
+
+    font-size:18px;
+
+    margin:12px;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+#successMessage{
+
+    position:fixed;
+
+    top:25px;
+    right:25px;
+
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+
+    gap:14px;
+
+    background:white;
+
+    color:#0f172a;
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 15px 45px rgba(15,23,42,.22);
+
+    border-right:5px solid #2563eb;
+}
+
+#successMessage p{
+    margin-top:4px;
+    color:#64748b;
+    font-size:14px;
+}
+
+.success-icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#eff6ff;
+
+    border-radius:14px;
+
+    font-size:24px;
+}
+
+/* =========================
+   CART TOAST
+========================= */
+
+.cart-toast{
+
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translate(-50%,30px);
+
+    background:#0f172a;
+
+    color:#fff;
+
+    padding:14px 22px;
+
+    border-radius:16px;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:99999;
+
+    transition:.3s ease;
+}
+
+.cart-toast.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translate(-50%,0);
+}
+
+/* =========================
+   FLOATING BRAND
+========================= */
+
+.floating-brand{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    min-width:210px;
+    min-height:52px;
+
+    margin:8px auto;
+
+    border-radius:18px;
+
+    font-size:24px;
+    font-weight:800;
+
+    background:white;
+    color:#0f172a;
+
+    box-shadow:
+        0 10px 25px rgba(15,23,42,.15);
+
+    animation:floatingBrand 3s ease-in-out infinite;
+}
+
+.floating-brand .brand-icon{
+    font-size:24px;
+}
+
+@keyframes floatingBrand{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}
+
+/* =========================
+   FLOATING MINI
+========================= */
+
+.floating-mini{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:6px auto 12px;
+}
+
+.floating-mini span{
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    background:white;
+    color:#0f172a;
+
+    border:1px solid #e2e8f0;
+
+    font-size:13px;
+    font-weight:800;
+
+    box-shadow:
+        0 6px 18px rgba(15,23,42,.08);
+
+    animation:floatingMini 3s ease-in-out infinite;
+}
+
+.floating-mini span:nth-child(2){
+    animation-delay:.25s;
+}
+
+.floating-mini span:nth-child(3){
+    animation-delay:.5s;
+}
+
+@keyframes floatingMini{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+/* =========================
+   ORDER SUCCESS
+========================= */
+
+.order-success{
+
+    position:fixed;
+
+    top:25px;
+    right:25px;
+
+    z-index:999999;
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    width:min(420px,calc(100% - 30px));
+
+    padding:16px 18px;
+
+    background:rgba(255,255,255,.97);
+
+    border:1px solid #dbeafe;
+
+    border-right:5px solid #22c55e;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.18);
+
+    backdrop-filter:blur(15px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(-20px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s ease;
+}
+
+.order-success.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+.order-success-icon{
+
+    width:50px;
+    height:50px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    color:white;
+
+    font-size:27px;
+    font-weight:900;
+
+    box-shadow:
+        0 8px 20px rgba(34,197,94,.25);
+}
+
+.order-success-content strong{
+
+    display:block;
+
+    color:#0f172a;
+
+    font-size:17px;
+
+    font-weight:900;
+}
+
+.order-success-content p{
+
+    margin-top:5px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* =========================
+   CART BADGE
+========================= */
+
+#cartBadge{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:22px;
+    height:22px;
+
+    margin-right:5px;
+
+    padding:0 6px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    line-height:1;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(37,99,235,.20),
+            transparent 35%
+        ),
+        #020617;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:40px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .top h1{
+        font-size:32px;
+    }
+
+    .hero{
+        margin:18px 10px;
+        padding:40px 18px;
+    }
+
+    .hero h2{
+        font-size:26px;
+    }
+
+    .hero-stats{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-stat{
+        min-width:0;
+    }
+
+    .hero-stat:last-child{
+        grid-column:1 / -1;
+    }
+
+    .products{
+        padding:20px 12px 35px;
+    }
+
+    .title{
+        font-size:27px;
+        margin-top:40px;
+    }
+
+    .cart,
+    .contact,
+    .details,
+    .order-form{
+        margin-left:12px;
+        margin-right:12px;
+        border-radius:22px;
+    }
+
+    .menu{
+        width:calc(100% - 16px);
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        scrollbar-width:none;
+
+        border-radius:20px;
+    }
+
+    .menu::-webkit-scrollbar{
+        display:none;
+    }
+
+    .menu a{
+        flex:0 0 auto;
+
+        padding:10px 14px;
+
+        font-size:14px;
+    }
+
+    .floating-brand{
+        min-width:0;
+
+        width:calc(100% - 35px);
+
+        padding:14px 20px;
+
+        font-size:20px;
+
+        border-radius:20px;
+    }
+
+    .floating-mini{
+        gap:7px;
+
+        margin-bottom:25px;
+    }
+
+    .floating-mini span{
+        padding:7px 12px;
+
+        font-size:12px;
+    }
+
+    .order-success{
+
+        top:15px;
+        right:15px;
+
+        width:calc(100% - 30px);
+
+        padding:14px;
+    }
+
+    .order-success-icon{
+
+        width:44px;
+        height:44px;
+
+        font-size:23px;
+    }
+
+    .order-success-content strong{
+        font-size:15px;
+    }
+
+    .order-success-content p{
+        font-size:12px;
+    }
+
+}
+
+/* =========================
+   PRODUCTS SPACING
+========================= */
+
+#products.title{
+    margin-top:18px !important;
+    margin-bottom:12px !important;
+    line-height:1.2;
+}
+
+#products .floating-brand{
+    margin:8px auto 8px !important;
+}
+
+#products .floating-mini{
+    margin:6px auto 12px !important;
+}
+
+#products .badge{
+    margin-top:6px !important;
+    margin-bottom:8px !important;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="top">
+
+    <h1>DIGITALSTORE</h1>
+
+    <p>
+        متجر المنتجات الرقمية الحديثة
+    </p>
+
+</div>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<div class="menu">
+
+    <a href="#">
+        ⌂ الرئيسية
+    </a>
+
+    <a href="#products">
+        ▣ المنتجات
+    </a>
+
+    <a href="#cart">
+        🛒 السلة
+        <span id="cartBadge">0</span>
+    </a>
+
+    <a href="#payment-section">
+        💳 الدفع
+    </a>
+
+    <a href="#contact">
+        💬 التواصل
+    </a>
+
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <div class="hero-badge">
+        ⚡ DIGITALSTORE
+    </div>
+
+    <div class="hero-mini">
+
+        <span>
+            ⚡ سريع
+        </span>
+
+        <span>
+            💎 رقمي
+        </span>
+
+        <span>
+            🔒 موثوق
+        </span>
+
+    </div>
+
+    <h2>
+        كل ما تحتاجه في مكان واحد 🚀
+    </h2>
+
+    <div class="hero-stats">
+
+        <div class="hero-stat">
+
+            <strong>
+                📦
+            </strong>
+
+            <span>
+                منتجات رقمية
+            </span>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <strong>
+                ⚡
+            </strong>
+
+            <span>
+                تسليم سريع
+            </span>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <strong>
+                ⭐
+            </strong>
+
+            <span>
+                جودة عالية
+            </span>
+
+        </div>
+
+    </div>
+
+    <p>
+        منتجات رقمية بجودة عالية وسهولة شراء
+    </p>
+
+    <a
+        href="#products"
+        class="hero-btn"
+    >
+        تصفح المنتجات
+    </a>
+
+</div>
+
+
+<!-- =========================
+     PRODUCTS TITLE
+========================= -->
+
+<h2
+    class="title"
+    id="products"
+>
+
+    <div class="floating-brand">
+
+        <span>
+            ⚡
+        </span>
+
+        <span>
+            DIGITALSTORE
+        </span>
+
+    </div>
+
+
+    <div class="floating-mini">
+
+        <span>
+            ⚡ سريع
+        </span>
+
+        <span>
+            💎 رقمي
+        </span>
+
+        <span>
+            🔒 موثوق
+        </span>
+
+    </div>
+
+</h2>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<input
+    type="text"
+    id="searchBox"
+    placeholder="🔍 ابحث عن منتج..."
+    onkeyup="searchProducts()"
+    class="search-box"
+>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<div class="categories">
+
+    <button
+        onclick="filterProducts('all')"
+    >
+        ⭐ الكل
+    </button>
+
+    <button
+        onclick="filterProducts('book')"
+    >
+        📚 كتب
+    </button>
+
+    <button
+        onclick="filterProducts('design')"
+    >
+        🎨 تصاميم
+    </button>
+
+</div>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<div class="products">
+
+
+    <!-- PRODUCT 1 -->
+
+    <div class="card product-item book">
+
+        <div class="popular-badge">
+            🔥 جديد
+        </div>
+
+        <img
+            src="https://i.ibb.co/ymyMR16F/Gemini-Generated-Image-spjk9vspjk9vspjk.png"
+            alt="رواية ظلام الليل"
+            class="product-image"
+        >
+
+        <h3>
+            رواية ظلام الليل
+        </h3>
+
+        <div class="rating">
+
+            ★★★★★
+
+            <span>
+                (5.0)
+            </span>
+
+        </div>
+
+        <p>
+            رواية مرعبة حماسية 🔥
+        </p>
+
+        <div class="price">
+            ₪5
+        </div>
+
+        <div class="product-info-mini">
+
+            <span>
+                ✓ منتج رقمي
+            </span>
+
+            <span>
+                ⚡ جاهز
+            </span>
+
+            <span>
+                🔒 آمن
+            </span>
+
+        </div>
+
+        <button
+            onclick="showProduct(
+                'رواية ظلام الليل',
+                '₪5',
+                'https://i.ibb.co/ymyMR16F/Gemini-Generated-Image-spjk9vspjk9vspjk.png'
+            )"
+        >
+            عرض المنتج
+        </button>
+
+    </div>
+
+
+    <!-- PRODUCT 2 -->
+
+    <div class="card product-item design">
+
+        <div class="popular-badge">
+            🔥 الأكثر طلبًا
+        </div>
+
+        <img
+            src="https://i.ibb.co/fzHrkfDT/Screenshot-Chat-GPT.jpg"
+            alt="تصميم شعار"
+            class="product-image"
+        >
+
+        <h3>
+            تصميم شعار
+        </h3>
+
+        <div class="rating">
+
+            ★★★★★
+
+            <span>
+                (5.0)
+            </span>
+
+        </div>
+
+        <p>
+            شعار احترافي لمشروعك
+        </p>
+
+        <div class="price">
+            ₪10
+        </div>
+
+        <div class="product-info-mini">
+
+            <span>
+                ✓ منتج رقمي
+            </span>
+
+            <span>
+                ⚡ جاهز
+            </span>
+
+            <span>
+                🔒 آمن
+            </span>
+
+        </div>
+
+        <button
+            onclick="showProduct(
+                'تصميم شعار',
+                '₪10',
+                'https://i.ibb.co/fzHrkfDT/Screenshot-Chat-GPT.jpg'
+            )"
+        >
+            عرض المنتج
+        </button>
+
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+
+    <div class="card product-item book">
+
+        <div class="popular-badge">
+            🔥 جديد
+        </div>
+
+        <img
+            src="https://i.ibb.co/ymyMR16F/Gemini-Generated-Image-spjk9vspjk9vspjk.png"
+            alt="رواية ظلام الليل"
+            class="product-image"
+        >
+
+        <h3>
+            رواية ظلام الليل
+        </h3>
+
+        <div class="rating">
+
+            ★★★★★
+
+            <span>
+                (5.0)
+            </span>
+
+        </div>
+
+        <p>
+            رواية مرعبة حماسية 🔥
+        </p>
+
+        <div class="price">
+            ₪5
+        </div>
+
+        <div class="product-info-mini">
+
+            <span>
+                ✓ منتج رقمي
+            </span>
+
+            <span>
+                ⚡ جاهز
+            </span>
+
+            <span>
+                🔒 آمن
+            </span>
+
+        </div>
+
+        <button
+            onclick="showProduct(
+                'رواية ظلام الليل',
+                '₪5',
+                'https://i.ibb.co/ymyMR16F/Gemini-Generated-Image-spjk9vspjk9vspjk.png'
+            )"
+        >
+            عرض المنتج
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     PRODUCT DETAILS
+========================= -->
+
+<div
+    id="details"
+    class="details"
+>
+
+    <img
+        id="detailsImage"
+        class="product-image"
+        alt="صورة المنتج"
+    >
+
+    <h2 id="productName">
+        اسم المنتج
+    </h2>
+
+    <p id="productDesc">
+        وصف المنتج
+    </p>
+
+    <div
+        id="productPrice"
+        class="price"
+    >
+        ₪0
+    </div>
+
+    <div
+        id="productRating"
+        class="rating"
+    >
+        ★★★★★
+        <span>
+            (5.0)
+        </span>
+    </div>
+
+    <button onclick="addCart()">
+        إضافة إلى السلة 🛒
+    </button>
+
+</div>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+    class="cart"
+    id="cart"
+>
+
+    <h2>
+        🛒 السلة
+    </h2>
+
+    <div class="cart-status">
+
+        <div class="cart-status-icon">
+            🛒
+        </div>
+
+        <div>
+
+            <strong>
+                سلتك جاهزة
+            </strong>
+
+            <span>
+                راجع منتجاتك قبل إتمام الطلب
+            </span>
+
+        </div>
+
+    </div>
+
+    <p id="cartCount">
+        عدد المنتجات: 0
+    </p>
+
+    <p id="cartTotal">
+        المجموع: ₪0
+    </p>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-buttons">
+
+        <button onclick="openOrder()">
+            إتمام الطلب
+        </button>
+
+        <button
+            class="clear-btn"
+            onclick="clearCart()"
+        >
+            إفراغ السلة
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ORDER FORM
+========================= -->
+
+<div
+    id="orderForm"
+    class="order-form"
+>
+
+    <h2>
+        إتمام الطلب 🛒
+    </h2>
+
+    <small
+        style="
+            display:block;
+            color:#dc2626;
+            font-weight:bold;
+            margin:5px 0 10px;
+        "
+    >
+        ⚠️ يرجى إدخال بيانات صحيحة ورقم تواصل فعّال،
+        حتى نتمكن من التواصل معك بخصوص طلبك.
+    </small>
+
+
+    <label for="customerName">
+        👤 الاسم الكامل
+    </label>
+
+    <input
+        type="text"
+        id="customerName"
+        placeholder="اكتب اسمك الكامل"
+        autocomplete="name"
+    >
+
+
+    <label for="customerPhone">
+        📱 رقم التواصل
+    </label>
+
+    <input
+        type="tel"
+        id="customerPhone"
+        placeholder="059xxxxxxx | 056xxxxxxx"
+        maxlength="10"
+        minlength="10"
+        inputmode="numeric"
+        autocomplete="tel"
+    >
+
+
+    <label for="paymentMethod">
+        💳 طريقة الدفع
+    </label>
+
+    <select id="paymentMethod">
+
+        <option value="">
+            اختر طريقة الدفع
+        </option>
+
+        <option value="تحويل بنكي">
+            تحويل بنكي
+        </option>
+
+        <option value="محفظة إلكترونية">
+            محفظة إلكترونية
+        </option>
+
+        <option value="USDT">
+            USDT
+        </option>
+
+    </select>
+
+
+    <label for="note">
+        📝 ملاحظات
+    </label>
+
+    <textarea
+        id="note"
+        placeholder="ملاحظات"
+    ></textarea>
+
+
+    <button
+        type="button"
+        onclick="sendOrder()"
+    >
+        إرسال الطلب 📩
+    </button>
+
+</div>
+
+
+<!-- =========================
+     PAYMENT + CONTACT
+========================= -->
+
+<section
+    class="contact"
+    id="payment-section"
+>
+
+    <h2>
+        طرق الدفع 💳
+    </h2>
+
+    <div class="payment-box">
+
+        <p>
+            💰 تحويل بنكي
+        </p>
+
+        <p>
+            📱 محافظ إلكترونية
+        </p>
+
+        <p>
+            🪙 USDT
+        </p>
+
+    </div>
+
+
+    <h2 id="contact">
+        تواصل معنا 📞
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            💬 تيليجرام: @Mano570
+        </p>
+
+        <p>
+            @ABODsuliman
+        </p>
+
+        <p>
+            📱 واتساب: 00972598387394
+        </p>
+
+        <p>
+            00972569515831
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    DIGITALSTORE © 2026
+
+</footer>
+
+
+<!-- =========================
+     ADD TO CART SUCCESS
+========================= -->
+
+<div id="successMessage">
+
+    <div class="success-icon">
+        🛒
+    </div>
+
+    <div>
+
+        <strong>
+            تمت إضافة المنتج!
+        </strong>
+
+        <p>
+            المنتج أصبح في سلتك بنجاح
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CART TOAST
+========================= -->
+
+<div
+    id="cartToast"
+    class="cart-toast"
+>
+    🗑️ تم إفراغ السلة ✨
+</div>
+
+
+<!-- =========================
+     ORDER SUCCESS
+========================= -->
+
+<div
+    id="orderSuccessMessage"
+    class="order-success"
+>
+
+    <div class="order-success-icon">
+        ✓
+    </div>
+
+    <div class="order-success-content">
+
+        <strong>
+            تم إرسال طلبك بنجاح 🎉
+        </strong>
+
+        <p>
+            وصل طلبك إلينا، وسنتواصل معك قريبًا لإتمام الطلب.
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CART DATA
+========================= */
+
+let cartCount =
+    Number(
+        localStorage.getItem("cartCount")
+    ) || 0;
+
+
+let total =
+    Number(
+        localStorage.getItem("total")
+    ) || 0;
+
+
+let cartItems =
+    JSON.parse(
+        localStorage.getItem("cartItems")
+    ) || [];
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateCartUI();
+
+    }
+);
+
+
+/* =========================
+   SHOW PRODUCT
+========================= */
+
+function showProduct(
+    name,
+    price,
+    image
+){
+
+    const details =
+        document.getElementById("details");
+
+    const productName =
+        document.getElementById("productName");
+
+    const productPrice =
+        document.getElementById("productPrice");
+
+    const detailsImage =
+        document.getElementById("detailsImage");
+
+    const productDesc =
+        document.getElementById("productDesc");
+
+
+    details.style.display = "block";
+
+
+    productName.textContent =
+        name;
+
+
+    productPrice.textContent =
+        price;
+
+
+    detailsImage.src =
+        image;
+
+
+    if(name === "رواية ظلام الليل"){
+
+        productDesc.textContent =
+            "رواية رقمية مرعبة وحماسية، مناسبة لعشاق الغموض والإثارة.";
+
+    }
+
+    else if(name === "تصميم شعار"){
+
+        productDesc.textContent =
+            "تصميم شعار احترافي يناسب مشروعك وعلامتك التجارية.";
+
+    }
+
+    else{
+
+        productDesc.textContent =
+            "منتج رقمي عالي الجودة وجاهز للاستخدام.";
+
+    }
+
+
+    details.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addCart(){
+
+    const productName =
+        document
+            .getElementById("productName")
+            .textContent
+            .trim();
+
+
+    const priceText =
+        document
+            .getElementById("productPrice")
+            .textContent
+            .trim();
+
+
+    const priceNumber =
+        Number(
+            priceText
+                .replace("₪","")
+                .trim()
+        );
+
+
+    if(
+        !productName ||
+        !priceNumber ||
+        priceNumber <= 0
+    ){
+
+        alert(
+            "تعذر إضافة المنتج."
+        );
+
+        return;
+
+    }
+
+
+    cartCount++;
+
+    total += priceNumber;
+
+    cartItems.push(
+        productName
+    );
+
+
+    saveCart();
+
+    updateCartUI();
+
+    showSuccess();
+
+}
+
+
+/* =========================
+   SAVE CART
+========================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "cartCount",
+        String(cartCount)
+    );
+
+
+    localStorage.setItem(
+        "total",
+        String(total)
+    );
+
+
+    localStorage.setItem(
+        "cartItems",
+        JSON.stringify(cartItems)
+    );
+
+}
+
+
+/* =========================
+   UPDATE CART UI
+========================= */
+
+function updateCartUI(){
+
+    const cartBadge =
+        document.getElementById(
+            "cartBadge"
+        );
+
+
+    if(cartBadge){
+
+        cartBadge.textContent =
+            cartCount;
+
+    }
+
+
+    const countElement =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    const totalElement =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    const itemsElement =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(countElement){
+
+        countElement.textContent =
+            "عدد المنتجات: " +
+            cartCount;
+
+    }
+
+
+    if(totalElement){
+
+        totalElement.textContent =
+            "المجموع: ₪" +
+            total;
+
+    }
+
+
+    if(itemsElement){
+
+        if(cartItems.length === 0){
+
+            itemsElement.innerHTML =
+                '<p style="color:#64748b;">السلة فارغة 🛒</p>';
+
+        }
+
+        else{
+
+            itemsElement.innerHTML =
+                cartItems
+                    .map(
+                        function(
+                            item,
+                            index
+                        ){
+
+                            return (
+                                "<p>🛍️ " +
+                                (index + 1) +
+                                ". " +
+                                escapeHTML(item) +
+                                "</p>"
+                            );
+
+                        }
+                    )
+                    .join("");
+
+        }
+
+    }
+
+}
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================
+   OPEN ORDER
+========================= */
+
+function openOrder(){
+
+    if(
+        cartCount <= 0 ||
+        cartItems.length === 0
+    ){
+
+        alert(
+            "السلة فارغة 🛒\nأضف منتجًا أولاً."
+        );
+
+        return;
+
+    }
+
+
+    const orderForm =
+        document.getElementById(
+            "orderForm"
+        );
+
+
+    if(!orderForm){
+
+        return;
+
+    }
+
+
+    orderForm.style.display =
+        "block";
+
+
+    orderForm.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================
+   CLEAR CART
+========================= */
+
+function clearCart(){
+
+    cartCount = 0;
+
+    total = 0;
+
+    cartItems = [];
+
+
+    localStorage.removeItem(
+        "cartCount"
+    );
+
+    localStorage.removeItem(
+        "total"
+    );
+
+    localStorage.removeItem(
+        "cartItems"
+    );
+
+
+    updateCartUI();
+
+    showCartToast();
+
+}
+
+
+/* =========================
+   SEND ORDER
+========================= */
+
+async function sendOrder(){
+
+    const sendButton =
+        document.querySelector(
+            '#orderForm button[onclick="sendOrder()"]'
+        );
+
+
+    if(
+        cartCount <= 0 ||
+        cartItems.length === 0
+    ){
+
+        alert(
+            "لا يمكن إرسال الطلب لأن السلة فارغة 🛒"
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
+
+
+    const payment =
+        document
+            .getElementById("paymentMethod")
+            .value;
+
+
+    const note =
+        document
+            .getElementById("note")
+            .value
+            .trim();
+
+
+    /* =========================
+       VALIDATION
+    ========================= */
+
+    if(
+        name === "" ||
+        phone === "" ||
+        payment === ""
+    ){
+
+        alert(
+            "⚠️ يرجى تعبئة جميع البيانات بشكل صحيح."
+        );
+
+        return;
+
+    }
+
+
+    const phoneDigits =
+        phone.replace(/\D/g,"");
+
+
+    if(
+        !/^(059|056)\d{7}$/.test(
+            phoneDigits
+        )
+    ){
+
+        alert(
+            "📱 يرجى إدخال رقم فلسطيني صحيح يبدأ بـ 059 أو 056 ويتكون من 10 أرقام."
+        );
+
+        return;
+
+    }
+
+
+    /* =========================
+       ORDER NUMBER
+    ========================= */
+
+    const orderNumber =
+        Math.floor(
+            1000 +
+            Math.random() * 9000
+        );
+
+
+    const date =
+        new Date();
+
+
+    /* =========================
+       PRODUCTS TEXT
+    ========================= */
+
+    const productsText =
+        cartItems
+            .map(
+                function(
+                    item,
+                    index
+                ){
+
+                    return (
+                        (index + 1) +
+                        "- " +
+                        item
+                    );
+
+                }
+            )
+            .join("\n");
+
+
+    /* =========================
+       TELEGRAM MESSAGE
+    ========================= */
+
+    const message =
+        "🛒 طلب جديد #" +
+        orderNumber +
+        "\n\n" +
+
+        "👤 الاسم: " +
+        name +
+        "\n" +
+
+        "📱 الهاتف: " +
+        phoneDigits +
+        "\n\n" +
+
+        "🛍️ المنتجات:\n" +
+        productsText +
+        "\n\n" +
+
+        "💳 الدفع: " +
+        payment +
+        "\n" +
+
+        "💰 المجموع: ₪" +
+        total +
+        "\n\n" +
+
+        "📝 ملاحظات:\n" +
+        (note || "لا يوجد") +
+        "\n\n" +
+
+        "📅 التاريخ: " +
+        date.toLocaleDateString(
+            "en-GB",
+            {
+                calendar:"gregory"
+            }
+        ) +
+
+        "\n" +
+
+        "⏰ الوقت: " +
+        date.toLocaleTimeString();
+
+
+    /* ==================================================
+       TELEGRAM BOT
+       
+       مهم:
+       ضع التوكن الخاص ببوتك هنا.
+       لا ترسل التوكن لي.
+    ================================================== */
+
+    const token =
+        "8750878752:AAENZgYF9fjZPljdSJT7NwMmp9m686PNMl0";
+
+
+    const chat_id =
+        "7494387786";
+
+
+    if(
+        token === "REMOVED" ||
+        chat_id === "REMOVED"
+    ){
+
+        alert(
+            "الطلب جاهز، لكن بيانات Telegram غير مضافة بعد."
+        );
+
+        return;
+
+    }
+
+
+    /* =========================
+       DISABLE BUTTON
+    ========================= */
+
+    if(sendButton){
+
+        sendButton.disabled =
+            true;
+
+        sendButton.textContent =
+            "⏳ جاري إرسال الطلب...";
+
+    }
+
+
+    /* =========================
+       TELEGRAM URL
+    ========================= */
+
+    const url =
+        "https://api.telegram.org/bot" +
+        token +
+        "/sendMessage?chat_id=" +
+        chat_id +
+        "&text=" +
+        encodeURIComponent(message);
+
+
+    try{
+
+        const response =
+            await fetch(url);
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Telegram request failed"
+            );
+
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        const orderSuccess =
+            document.getElementById(
+                "orderSuccessMessage"
+            );
+
+
+        orderSuccess.classList.add(
+            "show"
+        );
+
+
+        setTimeout(
+            function(){
+
+                orderSuccess.classList.remove(
+                    "show"
+                );
+
+            },
+            4000
+        );
+
+
+        /* =========================
+           CLEAR CART
+        ========================= */
+
+        clearCart();
+
+
+        /* =========================
+           HIDE FORM
+        ========================= */
+
+        document.getElementById(
+            "orderForm"
+        ).style.display =
+            "none";
+
+
+        /* =========================
+           CLEAR FORM
+        ========================= */
+
+        document.getElementById(
+            "customerName"
+        ).value = "";
+
+
+        document.getElementById(
+            "customerPhone"
+        ).value = "";
+
+
+        document.getElementById(
+            "paymentMethod"
+        ).value = "";
+
+
+        document.getElementById(
+            "note"
+        ).value = "";
+
+    }
+
+    catch(error){
+
+        console.error(
+            error
+        );
+
+        alert(
+            "حدث خطأ أثناء إرسال الطلب ❌\nتأكد من توكن Telegram و Chat ID واتصال الإنترنت."
+        );
+
+    }
+
+    finally{
+
+        if(sendButton){
+
+            sendButton.disabled =
+                false;
+
+            sendButton.textContent =
+                "إرسال الطلب 📩";
+
+        }
+
+    }
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchProducts(){
+
+    const input =
+        document
+            .getElementById("searchBox")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    const products =
+        document.querySelectorAll(
+            ".product-item"
+        );
+
+
+    products.forEach(
+        function(product){
+
+            const title =
+                product
+                    .querySelector("h3")
+                    .textContent
+                    .trim()
+                    .toLowerCase();
+
+
+            if(
+                input === "" ||
+                title.includes(input)
+            ){
+
+                product.style.display =
+                    "";
+
+            }
+
+            else{
+
+                product.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   FILTER PRODUCTS
+========================= */
+
+function filterProducts(type){
+
+    const products =
+        document.querySelectorAll(
+            ".product-item"
+        );
+
+
+    products.forEach(
+        function(product){
+
+            if(type === "all"){
+
+                product.style.display =
+                    "";
+
+            }
+
+            else if(
+                product.classList.contains(
+                    type
+                )
+            ){
+
+                product.style.display =
+                    "";
+
+            }
+
+            else{
+
+                product.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    /* تنظيف البحث */
+
+    const searchBox =
+        document.getElementById(
+            "searchBox"
+        );
+
+
+    if(searchBox){
+
+        searchBox.value =
+            "";
+
+    }
+
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+function showSuccess(){
+
+    const message =
+        document.getElementById(
+            "successMessage"
+        );
+
+
+    if(!message){
+
+        return;
+
+    }
+
+
+    message.style.display =
+        "flex";
+
+
+    setTimeout(
+        function(){
+
+            message.style.display =
+                "none";
+
+        },
+        3000
+    );
+
+}
+
+
+/* =========================
+   CART TOAST
+========================= */
+
+function showCartToast(){
+
+    const cartToast =
+        document.getElementById(
+            "cartToast"
+        );
+
+
+    if(!cartToast){
+
+        return;
+
+    }
+
+
+    cartToast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function(){
+
+            cartToast.classList.remove(
+                "show"
+            );
+
+        },
+        2200
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
